@@ -37,12 +37,6 @@ jobs:
         run: |
           pip install conan gcovr
           sudo apt-get update && sudo apt-get install -y clang-format clang-tidy ccache cppcheck
-      - name: Check choco location
-        run: |
-          choco list --local-only --exact clang-format --trace
-          choco list --local-only --exact clang-tidy --trace
-          choco list --local-only --exact ccache --trace
-          choco list --local-only --exact cppcheck --trace
 
       - name: Clone the git repo
         uses: actions/checkout@v2
