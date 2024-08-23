@@ -37,6 +37,7 @@ jobs:
         run: | 
           pip3 install conan gcovr
           brew install cppcheck ccache clang-format
+          export PATH=$(brew --prefix llvm@15)/bin:$PATH
 
       - name: Clone the git repo
         uses: actions/checkout@v2
