@@ -34,7 +34,9 @@ jobs:
           }
     steps:
       - name: Install dependencies
-        run: pip install conan gcovr
+        run: |
+          pip install conan gcovr
+          apt-get update && apt-get install -y clang-format clang-tidy ccache cppcheck
 
       - name: Clone the git repo
         uses: actions/checkout@v2
