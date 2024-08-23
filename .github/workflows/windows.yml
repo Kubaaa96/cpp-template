@@ -27,10 +27,10 @@ jobs:
 
       - name: Check choco location
         run: |
-          choco list --local-only --exact clang-format --trace
-          choco list --local-only --exact clang-tidy --trace
-          choco list --local-only --exact ccache --trace
-          choco list --local-only --exact cppcheck --trace
+          choco list --exact clang-format --trace
+          choco list --exact clang-tidy --trace
+          choco list --exact ccache --trace
+          choco list --exact cppcheck --trace
 
       - name: Clone the git repo
         uses: actions/checkout@v2
