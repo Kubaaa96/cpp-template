@@ -20,7 +20,7 @@ run_conan(
         INSTALL_ARGS --build=missing
 )
 
-project(cpp-template VERSION 0.0.2 DESCRIPTION "Basic template project for C++ language" LANGUAGES CXX C)
+project(cpp-template VERSION 0.0.3 DESCRIPTION "Basic template project for C++ language" LANGUAGES CXX C)
 
 set(CMAKE_CXX_STANDARD 20)
 
