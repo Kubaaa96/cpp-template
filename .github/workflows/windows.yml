@@ -31,9 +31,10 @@ jobs:
           choco list --exact clang-tidy --trace
           choco list --exact ccache --trace
           choco list --exact cppcheck --trace
-      - name: Cppcheck location check
+      - name: Set cppcheck to PATH
         run : |
-          dir C:\ProgramData\chocolatey\.chocolatey\cppcheck.2.12.0\.files
+          set PATH=%PATH%;C:\ProgramData\chocolatey\.chocolatey\cppcheck.2.12.0\.files
+          cppcheck --version
 #          dir C:\ProgramData\chocolatey\.chocolatey\cppcheck.2.12.0\
 
       - name: Clone the git repo
