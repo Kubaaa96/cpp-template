@@ -33,7 +33,7 @@ jobs:
           choco list --exact cppcheck --trace
       - name: Set cppcheck to PATH
         run : |
-          dir "C:\ProgramData\chocolatey\.chocolatey\cppcheck.2.12.0\.files"
+          dir /a "C:\ProgramData\chocolatey\.chocolatey\cppcheck.2.12.0\.files"
 #          cppcheck --version
 #          dir C:\ProgramData\chocolatey\.chocolatey\cppcheck.2.12.0\
 
