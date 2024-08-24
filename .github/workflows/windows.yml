@@ -34,7 +34,7 @@ jobs:
 
       - name: Set cppcheck to PATH
         run : |
-          choco info cppcheck
+          echo "C:\ProgramData\chocolatey\bin" >> $env:GITHUB_PATH
       #          Get-ChildItem -Path "${env:ProgramFiles}" | Where-Object {($_.Name -Like 'cppcheck*')} | % { $_.FullName }
       - name: Validate cppcheck
         run: |
