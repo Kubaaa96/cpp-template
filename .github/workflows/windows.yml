@@ -33,8 +33,8 @@ jobs:
           choco list --exact cppcheck --trace
       - name: Set cppcheck to PATH
         run : |
-          set PATH=%PATH%;C:\ProgramData\chocolatey\.chocolatey\cppcheck.2.12.0\.files
-          cppcheck --version
+          dir "C:\ProgramData\chocolatey\.chocolatey\cppcheck.2.12.0\.files"
+#          cppcheck --version
 #          dir C:\ProgramData\chocolatey\.chocolatey\cppcheck.2.12.0\
 
       - name: Clone the git repo
