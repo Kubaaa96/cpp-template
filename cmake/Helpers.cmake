@@ -5,7 +5,6 @@ function(package_add_test TESTNAME)
             ENABLE_CACHE
             ${ENABLE_CPPCHECK}
             ${ENABLE_CLANG_TIDY}
-            ${ENABLE_COVERAGE}
             WARNINGS_AS_ERRORS
     )
     add_executable(${TESTNAME} ${ARGS_SOURCES})
