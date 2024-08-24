@@ -31,12 +31,11 @@ jobs:
           choco list --exact clang-tidy --trace
           choco list --exact ccache --trace
           choco list --exact cppcheck --trace
+
       - name: Set cppcheck to PATH
         run : |
-#          dir /a "C:\ProgramData\chocolatey\.chocolatey\cppcheck.2.12.0\.files"
           Get-ChildItem -Path "${env:ProgramFiles}" | Where-Object {($_.Name -Like 'cppcheck*')} | % { $_.FullName }
-#          cppcheck --version
-#          dir C:\ProgramData\chocolatey\.chocolatey\cppcheck.2.12.0\
+
       - name: Validate cppcheck
         run: |
           cmd /c "echo %PATH%"
