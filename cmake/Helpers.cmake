@@ -5,7 +5,6 @@ function(package_add_test TESTNAME)
             ENABLE_CACHE
             ${ENABLE_CPPCHECK}
             ${ENABLE_CLANG_TIDY}
-            ${ENABLE_COVERAGE}
             WARNINGS_AS_ERRORS
     )
     add_executable(${TESTNAME} ${ARGS_SOURCES})
@@ -14,7 +13,10 @@ function(package_add_test TESTNAME)
     )
     target_include_directories(${TESTNAME} PUBLIC ${CMAKE_SOURCE_DIR}/include)
     find_and_link_libs(${TESTNAME})
-
+    gtest_discover_tests(${TESTNAME}
+            WORKING_DIRECTORY ${PROJECT_DIR}
+            PROPERTIES VS_DEBUGGER_WORKING_DIRECTORY "${PROJECT_DIR}"
+    )
 endfunction()
 
 function(find_and_link_libs TARGET_NAME)

@@ -20,7 +20,7 @@ run_conan(
         INSTALL_ARGS --build=missing
 )
 
-project(cpp-template VERSION 0.0.1 DESCRIPTION "Basic template project for C++ language" LANGUAGES CXX C)
+project(cpp-template VERSION 0.0.2 DESCRIPTION "Basic template project for C++ language" LANGUAGES CXX C)
 
 set(CMAKE_CXX_STANDARD 20)
 
@@ -51,4 +51,9 @@ target_link_system_libraries(${PROJECT_NAME}
         fmt::fmt
 )
 
-add_subdirectory(test)
+if(${CMAKE_BUILD_TYPE} STREQUAL "Debug")
+    message(STATUS "Testing enabled")
+    enable_testing()
+    include(GoogleTest)
+    add_subdirectory(test)
+endif ()
