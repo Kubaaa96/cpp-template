@@ -51,4 +51,9 @@ target_link_system_libraries(${PROJECT_NAME}
         fmt::fmt
 )
 
-add_subdirectory(test)
+if(${CMAKE_BUILD_TYPE} STREQUAL "Debug")
+    message(STATUS "Testing enabled")
+    enable_testing()
+    include(GoogleTest)
+    add_subdirectory(test)
+endif ()
