@@ -33,9 +33,14 @@ jobs:
           choco list --exact cppcheck --trace
       - name: Set cppcheck to PATH
         run : |
-          dir /a "C:\ProgramData\chocolatey\.chocolatey\cppcheck.2.12.0\.files"
+#          dir /a "C:\ProgramData\chocolatey\.chocolatey\cppcheck.2.12.0\.files"
+          Get-ChildItem -Path "${env:ProgramFiles}" | Where-Object {($_.Name -Like 'cppcheck*')} | % { $_.FullName }
 #          cppcheck --version
 #          dir C:\ProgramData\chocolatey\.chocolatey\cppcheck.2.12.0\
+      - name: Validate cppcheck
+        run: |
+          cmd /c "echo %PATH%"
+          cppcheck --version
 
       - name: Clone the git repo
         uses: actions/checkout@v2
