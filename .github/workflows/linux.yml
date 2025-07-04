@@ -48,6 +48,15 @@ jobs:
         working-directory: project
         run: |
           mkdir build
+      - name: Looking for compilers
+        run: |
+          echo $PATH
+          ls
+          pwd
+          ls /usr/local | grep gcc
+          ls /usr/bin | grep gcc
+          ls /usr/local | grep clang
+          ls /usr/bin | grep clang
 
       - name: Configure project
         working-directory: project

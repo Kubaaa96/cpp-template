@@ -22,7 +22,7 @@ run_conan(
 
 project(cpp-template VERSION 0.0.4 DESCRIPTION "Basic template project for C++ language" LANGUAGES CXX C)
 
-set(CMAKE_CXX_STANDARD 26)
+set(CMAKE_CXX_STANDARD 23)
 
 set(ENABLE_CLANG_TIDY "ENABLE_CLANG_TIDY")
 set(ENABLE_CPPCHECK "ENABLE_CPPCHECK")
