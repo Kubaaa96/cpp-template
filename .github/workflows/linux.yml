@@ -53,10 +53,10 @@ jobs:
           echo $PATH
           ls
           pwd
-          ls /usr/local | grep gcc
-          ls /usr/bin | grep gcc
-          ls /usr/local | grep clang
-          ls /usr/bin | grep clang
+          ls /usr/local
+          ls /usr/bin 
+          ls /usr/local 
+          ls /usr/bin 
 
       - name: Configure project
         working-directory: project
