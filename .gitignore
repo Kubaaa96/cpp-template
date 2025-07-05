@@ -185,3 +185,4 @@ CMakeSettings.json
 /html/
 /build
 /venv/
+/CMakeUserPresets.json
