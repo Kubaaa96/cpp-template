@@ -8,7 +8,7 @@ env:
 jobs:
   windows:
     name: Windows
-    runs-on: windows-2022
+    runs-on: windows-2025
     strategy:
       matrix:
         CONFIG:
@@ -36,7 +36,6 @@ jobs:
         run : |
           echo "C:\ProgramData\chocolatey\bin" >> $env:GITHUB_PATH
           echo "C:\Program Files\Cppcheck" >> $env:GITHUB_PATH
-      #          Get-ChildItem -Path "${env:ProgramFiles}" | Where-Object {($_.Name -Like 'cppcheck*')} | % { $_.FullName }
       - name: Validate cppcheck
         run: |
           cmd /c "echo %PATH%"
